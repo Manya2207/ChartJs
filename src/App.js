@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import DesktopLayout from './components/DesktopLayout';
+import MobileLayout from './components/MobileLayout';
+import MediaQuery from 'react-responsive'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <MediaQuery minDeviceWidth={1224}>
+        <DesktopLayout />
+      </MediaQuery>
+
+      <MediaQuery maxDeviceWidth={1224}>
+        <MobileLayout />
+      </MediaQuery>
+
     </div>
   );
 }
